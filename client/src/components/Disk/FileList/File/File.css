@@ -1,0 +1,27 @@
+.file {
+    cursor: pointer;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 4fr repeat(4, 1fr);
+    border-bottom: 1px solid;
+    align-items: center;
+}
+
+.file:hover {
+    color: #353535;
+}
+
+.file__img {
+    justify-self: center;
+}
+
+.file__date {
+    grid-column-start: 5;
+    justify-self: center;
+}
+
+.file__size {
+    grid-column-start: 6;
+    justify-self: center;
+}
+

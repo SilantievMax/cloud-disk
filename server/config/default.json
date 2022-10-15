@@ -1,5 +1,6 @@
 {
     "SERVER_PORT" : 5000,
     "URL_DB": "mongodb://localhost:27017/cloud",
-    "SECRET_KEY": "xxXX1234"
+    "SECRET_KEY": "xxXX1234",
+    "FILE_PATH": "C:\\Projects\\cloud-disk\\server\\files"
 }

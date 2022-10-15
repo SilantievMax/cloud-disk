@@ -7,7 +7,7 @@ const UserSchema = new mongoose.Schema(
         diskSpace: { type: Number, default: 1024 ** 3 * 10 },
         usedSpace: { type: Number, default: 0 },
         avatar: String,
-        // files: [{ type: ObjectId, ref: "File" }],
+        files: [{ type: mongoose.ObjectId, ref: "File" }],
     },
     {
         timestamps: true,
