@@ -2,16 +2,19 @@ import React from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { createDir } from "../../actions/file";
-import { setCurrentDir, setPopupDisplay } from "../../reducers/fileReducer";
+import { setPopupDisplay } from "../../reducers/fileReducer";
 import Input from "../../utils/Input/Input";
 
 const Popup = () => {
     const [dirName, setDirName] = useState("");
     const popupDisplay = useSelector((state) => state.files.popupDisplay);
+    const currentDir = useSelector(state => state.files.currentDir)
     const dispatch = useDispatch();
 
     function createHandler() {
-        dispatch(createDir(setCurrentDir, dirName));
+        dispatch(createDir(currentDir, dirName));
+        setDirName('')
+        dispatch(setPopupDisplay('none'))
     }
 
     return (

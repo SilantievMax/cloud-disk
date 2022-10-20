@@ -7,9 +7,9 @@ const FileSchema = new mongoose.Schema(
         accessLink: { type: String },
         size: { type: Number, default: 0 },
         path: { type: String, default: "" },
-        user: { type: mongoose.ObjectId, ref: "User" },
-        parent: { type: mongoose.ObjectId, ref: "File" },
-        childs: [{ type: mongoose.ObjectId, ref: "File" }],
+        user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+        parent: { type: mongoose.Schema.Types.ObjectId, ref: "File" },
+        childs: [{ type: mongoose.Schema.Types.ObjectId, ref: "File" }],
     },
     {
         timestamps: true,

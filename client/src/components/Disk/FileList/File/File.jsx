@@ -13,10 +13,10 @@ const File = ({ file }) => {
     }
 
     return (
-        <div onClick={file.type === 'dir' ? () => openDirHandler() : ''} className="file">
+        <div onClick={() => openDirHandler()} className="file">
             <img
                 src={file.type === "dir" ? dirLogo : fileLogo}
-                alt=""
+                alt="file"
                 className="file__img"
             />
             <div className="file__name">{file.name}</div>
