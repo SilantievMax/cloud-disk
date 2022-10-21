@@ -7,15 +7,17 @@ import "./File.css";
 
 const File = ({ file }) => {
     const dispatch = useDispatch();
-    const currentDir = useSelector((state) => state.files.currentDir)
+    const currentDir = useSelector((state) => state.files.currentDir);
 
-    function openDirHandler() {
-        dispatch(pushToStack(currentDir))
-        dispatch(setCurrentDir(file._id));
+    function openDirHandler(file) {
+        if (file.type === "dir") {
+            dispatch(pushToStack(currentDir));
+            dispatch(setCurrentDir(file._id));
+        }
     }
 
     return (
-        <div onClick={file.type === 'dir' ? () => openDirHandler() : ''} className="file">
+        <div onClick={() => openDirHandler(file)} className="file">
             <img
                 src={file.type === "dir" ? dirLogo : fileLogo}
                 alt="file"

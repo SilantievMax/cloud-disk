@@ -4,8 +4,8 @@ import fileController from "../controllers/fileController.js";
 
 const router = new Router();
 
-router.post('', authMiddleware, fileController.createDir)
-router.get('', authMiddleware, fileController.getFiles)
+router.post("", authMiddleware, fileController.createDir);
+router.post("/upload", authMiddleware, fileController.uploadFile);
+router.get("", authMiddleware, fileController.getFiles);
 
 export default router;
- 
